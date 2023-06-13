@@ -1,0 +1,48 @@
+html {
+  display: block;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+
+body {
+  background-color: #111;
+  color: #EEE;
+  font-family: monospace;
+  display: flex;
+  word-wrap: break-word;
+  padding: 0;
+  margin: 0 auto 60px auto;
+  width: 90vw;
+  max-width: 650px;
+}
+
+.container {
+  font-family: monospace;
+  padding: 20px;
+  max-width: 600px;
+}
+
+a, a:visited {
+  color: #EEEEEE;
+  text-decoration: none;
+  background-color: #666;
+  font-weight: bold;
+}
+
+.three {
+  display: grid;
+  place-items: center;
+}
+
+canvas {
+  align-self: center;
+  width: 100px;
+  height: auto;
+  background-color: #111;
+  padding: 15px;
+}
+
+h2 {
+  text-decoration: bold;
+  font-size: 1.5em;
+}
