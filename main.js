@@ -1,13 +1,14 @@
 import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { randInt } from 'three/src/math/MathUtils';
 
 // Setup
 
 const scene = new THREE.Scene();
 
 
-const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(74, 1, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
   preserveDrawingBuffer: true,
@@ -16,40 +17,58 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(350, 350);
-camera.position.setZ(15);
+renderer.setSize((window.innerHeight * 0.3), (window.innerHeight * 0.3));
+camera.position.setZ(13);
 
 renderer.render(scene, camera);
 
-// Box
+// box
 
-const geometry = new THREE.BoxGeometry(10, 10, 10, 1);
+// Surface X
 const material = new THREE.MeshBasicMaterial({ color: 0xeeeeee, wireframe: true });
-const box = new THREE.Mesh(geometry, material);
+const geometryY = new THREE.BoxGeometry(9, 9, 9, .99);
+const surfaceY = new THREE.Mesh(geometryY, material);
+// Surface Y
+const geometryX = new THREE.BoxGeometry(9, 9, 9, .99);
+const surfaceX = new THREE.Mesh(geometryX, material);
 
-scene.add(box);
+surfaceX.rotation.y += 1.549
+scene.add(surfaceX, surfaceY);
 
+// Controls
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping
+controls.enableZoom = false
+controls.enablePan = false
 
-// Lights
-
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
-
-const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(pointLight, ambientLight);
-
+// Animation Loop
 
 function animate() {
 
   requestAnimationFrame(animate);
 
-  box.rotation.x += 0.01;
-  box.rotation.y += 0.01;
-  box.rotation.z += 0.01;
+  let rotationSpeed = 0.003
 
-  // controls.update();
+  console.log(rotationSpeed)
+
+  surfaceY.rotation.x += rotationSpeed;
+  surfaceY.rotation.y += rotationSpeed;
+  surfaceY.rotation.z += rotationSpeed;
+
+
+  surfaceX.rotation.x -= rotationSpeed;
+  surfaceX.rotation.y -= rotationSpeed;
+  surfaceX.rotation.z -= rotationSpeed;
+
+  controls.update();
 
   renderer.render(scene, camera);
 }
 
 animate();
+
+// resize
+window.addEventListener("resize", () => {
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize((window.innerHeight * 0.3), (window.innerHeight * 0.3));
+})
