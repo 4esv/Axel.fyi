@@ -48,8 +48,6 @@ function animate() {
 
   let rotationSpeed = 0.003
 
-  console.log(rotationSpeed)
-
   surfaceY.rotation.x += rotationSpeed;
   surfaceY.rotation.y += rotationSpeed;
   surfaceY.rotation.z += rotationSpeed;
