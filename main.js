@@ -1,6 +1,5 @@
-import '/style.css';
 import * as THREE from "/node_modules/three/build/three.module.js";
-import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls';
+// import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls.js';
 
 // Setup
 
@@ -35,10 +34,10 @@ surfaceX.rotation.y += 1.549
 scene.add(surfaceX, surfaceY);
 
 // Controls
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping
-controls.enableZoom = false
-controls.enablePan = false
+// // const controls = new OrbitControls(camera, renderer.domElement);
+// controls.enableDamping
+// controls.enableZoom = false
+// controls.enablePan = false
 
 // Animation Loop
 
@@ -57,7 +56,7 @@ function animate() {
   surfaceX.rotation.y -= rotationSpeed;
   surfaceX.rotation.z -= rotationSpeed;
 
-  controls.update();
+  // controls.update();
 
   renderer.render(scene, camera);
 }
