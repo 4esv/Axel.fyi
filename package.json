@@ -1,18 +1,19 @@
 {
-  "name": "axel-fyi",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "axel.fyi",
+  "version": "1.0.0",
+  "description": "Personal website and api",
+  "main": "main.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "vite": "^4.3.9"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4esv/Axel.fyi.git"
   },
-  "dependencies": {
-    "firebase": "^9.22.2",
-    "three": "^0.153.0"
-  }
+  "author": "4esv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/4esv/Axel.fyi/issues"
+  },
+  "homepage": "https://github.com/4esv/Axel.fyi#readme"
 }
