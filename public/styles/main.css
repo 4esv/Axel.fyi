@@ -16,6 +16,9 @@
     color: var(--text-color);
 }
 
+.no-select {
+}
+
 body {
     background: var(--background-color);
     background-color: var(--background-color)
@@ -67,18 +70,34 @@ h1 {
 }
 
 button {
+    /* Prevent Select */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
     font-size: 2rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 15px;
+    transition: 1s;
 }
 
-#asterisk {
-    padding-top: 1px;
+button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transform: scale(1.1)
+}
+
+
+button:active {
+    transform: scale(0.98)
 }
 
 @media all and (max-width: 600px) { 
+
+    :root {
+        font-size: 14px;
+    }
 
     #banner {
         justify-content: end;
