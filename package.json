@@ -2,7 +2,7 @@
   "name": "axel.fyi",
   "version": "1.0.0",
   "description": "Personal website and api",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/4esv/Axel.fyi/issues"
   },
-  "homepage": "https://github.com/4esv/Axel.fyi#readme"
+  "homepage": "https://github.com/4esv/Axel.fyi#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.3"
+  }
 }
