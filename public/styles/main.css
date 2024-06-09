@@ -7,7 +7,11 @@
 
 :root {
     --background-color : #eee;
-    --text-color : #333
+    --text-color : #333;
+    @media (prefers-color-scheme: dark) {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
 }
 
 * {
@@ -16,12 +20,14 @@
     color: var(--text-color);
 }
 
-.no-select {
+html {
+    /* -webkit-filter: invert(100%); */
+    /* filter: invert(100%); */
 }
 
 body {
     background: var(--background-color);
-    background-color: var(--background-color)
+    background-color: var(--background-color);
     min-height: 100vh;
     border: 0;
     margin: 0;
@@ -60,6 +66,11 @@ body {
     padding: 5%;
     padding-top: 4rem;
     color: black;
+}
+
+hr {
+    color: var(--text-color)
+    border: 5px var(--text-color) solid;
 }
 
 h1 {
