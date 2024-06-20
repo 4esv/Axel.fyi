@@ -40,6 +40,10 @@ a:hover {
     color: var(--highlight-color);
 }
 
+h1 {
+    size: 48;
+}
+
 img {
     margin: 10px;
     transition: 1s;
@@ -100,9 +104,8 @@ hr {
     font-size: 8rem;
 }
 
-#subtext {
-    display: grid;
-    place-items: center;
+.subtext {
+    display: flex;
     font-size: 4vw;
     width: 100%;
 }
@@ -184,6 +187,10 @@ button:active {
         font-size: 7rem;
     }
 
+    .subtext{
+        font-size: 6vw;
+    }
+
 
     #more {
         font-size: 2rem;
@@ -191,3 +198,55 @@ button:active {
 
 }
 
+#roles {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.slider-container{
+    overflow: hidden;
+    height: 5.75vw;
+}
+
+.slider{
+    text-align: center;
+    list-style: none;
+    padding: 0px 0px 0px 10px;
+    margin: 0;
+    animation: marquee 20s linear infinite;
+}
+
+.slider li {
+    margin: 0px;
+}
+
+@keyframes marquee {
+    0% {
+        margin-top: 0vw;
+    }
+    20% {
+        margin-top: 0vw;
+    }
+    25% {
+        margin-top: -5vw;
+    }
+    45% {
+        margin-top: -5vw;
+    }
+    50% {
+        margin-top: -10vw;
+    }
+    70% {
+        margin-top: -10vw;
+    }
+    75% {
+        margin-top: -15vw;
+    }
+    95% {
+        margin-top: -15vw;
+    }
+    100% {
+        margin-top: 0vw;
+    }
+}
