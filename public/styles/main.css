@@ -29,6 +29,10 @@ body {
   margin: 0;
 }
 
+#no-css {
+  display: none;
+}
+
 a {
   color: darken(var(--highlight-color), 10%);
   text-decoration: none;
@@ -93,7 +97,7 @@ img {
   width: 100%;
 }
 
-#nav-wrapper {
+#logo-wrapper {
   display: flex;
   gap: 10px;
 }
@@ -182,7 +186,7 @@ button:active {
 .slider {
   list-style: none;
   padding: 0;
-  animation: marquee 10s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
+  animation: marquee-mobile 10s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
   margin: 0px 0px 0px 16px; /* Updated margin */
 }
 
@@ -195,53 +199,84 @@ button:active {
     margin-top: -0.2px;
 }
 
-@keyframes marquee {
+@keyframes marquee-mobile {
   0% {
-    margin-top: 0%;
+    margin-top: 0rem;
   }
   15% {
     margin-top: 0rem;
   }
   20% {
-    margin-top: -11.8%;
+    margin-top: -2.75rem;
   }
   35% {
-    margin-top: -11.8%;
+    margin-top: -2.75rem;
   }
   40% {
-    margin-top: -23.5%;
+    margin-top: -5.5rem;
   }
   55% {
-    margin-top: -23.5%;
+    margin-top: -5.5rem;
   }
   60% {
-    margin-top: -35.3%;
+    margin-top: -8.3rem;
   }
   75% {
-    margin-top: -35.3%;
+    margin-top: -8.3rem;
 }
   80% {
-    margin-top: -46.9%;
+    margin-top: -11.1rem;
   }
   95% {
-    margin-top: -46.9%;
+    margin-top: -11.1rem;
   }
   100% {
     margin-top: 0%;
   }
 }
 
+
+
+#nav {
+  top: 0.8rem;
+  left: 2.5rem;
+  position: absolute;
+  list-style: none;
+}
+
+#nav li {
+  width: fit-content; 
+}
+
+#nav li:hover {
+   scale: 1.2; 
+}
+
+
+
+
+
 /* Media Queries */
-@media all and (max-width: 600px) {
+@media all and (max-width: 960px) {
   :root {
-    font-size: 10px;
+    font-size: 12px;
+  }
+
+  #nav{
+    top: 2rem;
+    left: unset;
+    right: 7rem;
+    text-align: right;
+    display: grid;
+    place-items: end;
+    list-style: none;
   }
 
   #banner {
     justify-content: end;
   }
 
-  #nav-wrapper {
+  #logo-wrapper {
     flex-direction: row-reverse;
   }
 
@@ -250,18 +285,12 @@ button:active {
     font-size: 3rem;
   }
 
+
   #introduction {
     width: 100%;
     font-size: calc(((1vh + 1vw) / 2) * 15);
   }
 
-  .introduction {
-    font-size: 7rem;
-  }
-
-  .subtext {
-    font-size: 6vw;
-  }
 
   #more {
     font-size: 2rem;
@@ -275,39 +304,45 @@ button:active {
     margin-right: 5px;
   }
 
+  .subtext{
+    font-size: 2.2rem;
+  }
+  
+
   @keyframes marquee {
     0% {
-      margin-top: 0vw;
+      margin-top: 0%;
     }
-    19% {
-      margin-top: 0vw;
+    15% {
+      margin-top: 0rem;
     }
     20% {
-      margin-top: -7.5vw;
+      margin-top: -11.8%;
     }
-    39% {
-      margin-top: -7.5vw;
+    35% {
+      margin-top: -11.8%;
     }
     40% {
-      margin-top: -15vw;
+      margin-top: -23.5%;
     }
-    59% {
-      margin-top: -15vw;
+    55% {
+      margin-top: -23.5%;
     }
     60% {
-      margin-top: -22.5vw;
+      margin-top: -35.3%;
     }
-    79% {
-      margin-top: -22.5vw;
-    }
+    75% {
+      margin-top: -35.3%;
+  }
     80% {
-      margin-top: -30vw;
+      margin-top: -46.9%;
     }
-    99% {
-      margin-top: -30vw;
+    95% {
+      margin-top: -46.9%;
     }
     100% {
-      margin-top: 0vw;
+      margin-top: 0%;
     }
   }
+
 }
